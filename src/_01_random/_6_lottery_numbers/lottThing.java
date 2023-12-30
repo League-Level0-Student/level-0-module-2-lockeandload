@@ -11,8 +11,12 @@ public class lottThing {
 		for (int RN=0;RN<10 ; RN += 1) {
 			int randomNumber = randomMaker.nextInt(100);
 			thing += randomNumber + " ";
+			
 			//System.out.println(randomNumber);
 		}
-		JOptionPane.showMessageDialog(null,thing);
+		
+		JOptionPane.showMessageDialog(null, "Lotto number\n" + thing);
+
+	
 	}
 }

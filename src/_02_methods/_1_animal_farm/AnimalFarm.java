@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class AnimalFarm {
-	
+
 	/***********  SOUND ***************
 	 * Some computers are unable to play sounds. 
 	 * If you cannot play sound on this computer, set canPlaySounds to false.
@@ -18,19 +18,40 @@ public class AnimalFarm {
 	 * *****************/
 	boolean canPlaySounds = true;
 
-	
+
 	public static void main(String[] args) {
 		new AnimalFarm().animals();
 	}
-	
+
 	void animals() {
 
 		/* 1. Ask the user which animal they want, then see and hear 
 		 *    the animal they chose using one of the methods below.
-		*/			 
-			
-		/* 2. Make it so that the user can keep entering new animals. */
+		 */			 
+		String  [] options = {"cow", "duck", "dog", "cat", "llama"};
 
+		for (int again=0;again<1000 ; again += 1) { 
+			int choice = JOptionPane.showOptionDialog(null, "chose an animal", null, 0, 3, null, options, null); 
+			System.out.println(choice);
+			/* 2. Make it so that the user can keep entering new animals. */
+
+			if (choice ==0) {
+			moo();	
+			}
+			if (choice ==1) {
+				quack();	
+				}
+			if (choice ==2) {
+				woof();	
+				}
+			if (choice ==3) {
+				meow();	
+				}
+			if (choice ==4) {
+				scream();	
+				}
+		}
+		JOptionPane.showMessageDialog(null,"go touch grass NERD");
 	}
 
 	void moo() {
@@ -43,24 +64,25 @@ public class AnimalFarm {
 		showImage(duckIcon);
 	}
 
+
 	void woof() {
 		playNoise(woofFile);
 		showImage(dogIcon);
 	}
-	
+
 	void meow() {
 		playNoise(meowFile);
 		showImage(catIcon);
 	}
-	
-	void llamaScream() {
+
+	void scream() {
 		playNoise(llamaFile);
 		showImage(llamaIcon);
 	}
-	
 
 
-	
+
+
 
 	/* Ignore this stuff */
 	String path = "src/_02_methods/_1_animal_farm/";
@@ -74,26 +96,26 @@ public class AnimalFarm {
 	ImageIcon dogIcon;
 	ImageIcon duckIcon;
 	ImageIcon cowIcon;
-	
+
 	private void showImage (ImageIcon icon) {
-			JOptionPane.showMessageDialog(null, "", "You chose", 0, icon);
+		JOptionPane.showMessageDialog(null, "", "You chose", 0, icon);
 	}
-	
+
 	private void playNoise(String soundFile) {
 		if (canPlaySounds) {	
 			File sound = new File(path+soundFile);
 			if (sound.exists()) {
 				new Thread(() -> {
-				try {
-					Clip clip = AudioSystem.getClip();
-					clip.open(AudioSystem.getAudioInputStream(sound));
-					clip.start();
-					Thread.sleep(clip.getMicrosecondLength()/1000);
-				}
-				catch (Exception e) {
-					System.out.println("Could not play this sound");
-				}}).start();
-	 		}
+					try {
+						Clip clip = AudioSystem.getClip();
+						clip.open(AudioSystem.getAudioInputStream(sound));
+						clip.start();
+						Thread.sleep(clip.getMicrosecondLength()/1000);
+					}
+					catch (Exception e) {
+						System.out.println("Could not play this sound");
+					}}).start();
+			}
 			else {
 				System.out.println("File does not exist");
 			}
@@ -108,7 +130,7 @@ public class AnimalFarm {
 			duckIcon = new ImageIcon(path+"duck.jpg");
 
 		} catch (Exception e) {
-					
+
 		}
 	}
 }
