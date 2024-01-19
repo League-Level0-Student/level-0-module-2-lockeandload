@@ -54,7 +54,7 @@ public class SafeCracker {
 	}
 
 	void tryCode(int guess) {
-	//	System.out.println("trying " + guess);
+		//System.out.println("trying " + guess);
 
 		int secretCode = 9999999 - wekncrzpasfdkjhcfjse;
 
@@ -70,8 +70,10 @@ public class SafeCracker {
 				System.exit(0);			
 			}
 		}
-
-	}
+		if (failCount >= 290000) {
+		System.out.println("failcount" + failCount);
+		}
+		}
 
 	private void playTheSoundOfSuccess() {
 
