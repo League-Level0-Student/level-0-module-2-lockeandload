@@ -3,24 +3,62 @@
 ***/
 import javax.swing.JOptionPane;
 void setup(){
-  
+
      size(500,500);
-     
-     // Call the makeIceCreamCone() method below to draw the cone for your ice cream
+  
+    
 makeIceCreamCone();
-     // Use the addScoop method below to add as many scoops of ice cream as you want
-     // Choose a different flavor for each scoop
-    String one = JOptionPane.showInputDialog("What icecream flavor do you wan't on your first layer? (chocolate,  )");
+     
+String one = JOptionPane.showInputDialog("What icecream flavor do you wan't on your first layer? (Chocolate, Vanilla, or Strawberry)");
+if(one.equals("Strawberry")){
+addScoop("Strawberry");
+scoops += 1;
+}
+if(one.equals("Chocolate")){
+addScoop("Chocolate");
+scoops += 1;
+}
+if(one.equals("Vanilla")){
 addScoop("Vanilla");
+scoops += 1;
+} //<>//
+String two = JOptionPane.showInputDialog("What icecream flavor do you wan't on your second layer? (Chocolate, Vanilla, or Strawberry)");
+if(two.equals("Strawberry")){
+addScoop("Strawberry");
+}
+if(two.equals("Chocolate")){
+addScoop("Chocolate");
+}
+if(two.equals("Vanilla")){
+addScoop("Vanilla");
+}
+String sprinkle = JOptionPane.showInputDialog("do you want Sprinkles, Yes or No?");
+if(sprinkle.equals("Yes")){
+String sprinkleCount = JOptionPane.showInputDialog("A lot, A little, or Normal");
+  if (sprinkleCount.equals("A lot")){
+  addSprinkle(500);
+  }
+  if (sprinkleCount.equals("A little")){
+  addSprinkle(10);
+  }
+  if (sprinkleCount.equals("Normal")){
+  addSprinkle(50);
+  }
+  if (sprinkleCount.equals("Too much")){
+  addSprinkle(50000);
+  }
+}
 
-
-     // Use the method provided to add some sprinkles to your ice cream
-
-     // Write code to add a cherry to the top of your ice cream. Hint: ellipse
+String cherry= JOptionPane.showInputDialog("Do you want a cherry too, Yes or No?");
+if(cherry.equals("Yes")){
+  fill(255,0,0);
+  ellipse(50,50,50,51);
+}
+     
 
 }
 
-/***********  These are methods for you to use. DON'T CHANGE CODE BELOW THIS LINE !!!   *****************/
+//***************|-|***************\\
 
 //Icecream recipe
 int SCOOPSIZE = 150;
@@ -29,7 +67,7 @@ int coneY = 320;
 
 
 void makeIceCreamCone(){
-     //noStroke();
+     noStroke();
      fill(188,126,49);
      triangle(190,320,310,300,255,500);
 }
@@ -37,7 +75,7 @@ void makeIceCreamCone(){
 
 void addScoop(String flavor){
      noStroke();
-     if(flavor.equalsIgnoreCase("chocolate")){
+     if(flavor.equalsIgnoreCase("Chocolate")){
          fill(116,71,16);
      }
      else if(flavor.equalsIgnoreCase("Strawberry")){
@@ -59,7 +97,7 @@ void addSprinkle(int numberOfSprinkles){
          fill(random(256),random(256),random(256));
          int minX = width/2-SCOOPSIZE/2 + 10;
          int maxX = SCOOPSIZE/3 +width/2 +10;
-         int minY = coneY-((SCOOPSIZE)*scoops)/2-40;
+         int minY = coneY-((SCOOPSIZE)*scoops)/2+30;
          int maxY = coneY;
          int sprinkleAreaX = (int)random(minX, maxX);
          int sprinkleAreaY = (int)random(minY, maxY);

@@ -19,7 +19,7 @@ public class IntroToRandom {
 		// Run this program and you will see that nextInt created 5 random integers which have been printed to the console
 		for (int i=0; i<5; i++) {
 			number = ran.nextInt();
-		//	System.out.println(number);
+			//System.out.println(number);
 		}
 		// The range of numbers that an int variable can hold is very large (as you can see in the console).
 		// Integers can also be positive or negative.
