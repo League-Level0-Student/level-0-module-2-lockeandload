@@ -20,7 +20,16 @@ public class RollerCoaster {
 	}
 		
 		// Do you see the heightToRide > 42 underlined red? That is because you are comparing a STRING to an INTEGER.
-			
+		//clear the token from the clipboard next time
+	
+	//clear the token from the clipboard next time//clear the token from the clipboard next time//clear the token from the clipboard next time
+	//clear the token from the clipboard next time
+	//clear the token from the clipboard next time
+	//clear the token from the clipboard next time
+	//clear the token from the clipboard next time
+	//clear the token from the clipboard next time
+	//clear the token from the clipboard next time//clear the token from the clipboard next time//clear the token from the clipboard next time
+		
 		// 3) Convert heightToRide to heightAsInt using Integer.parseInt();  Hint: int heightAsInt = Integer.parse... 
 	
 		// 4) If the heightAsInt is greater than or equal to 48 inches tall print:
