@@ -9,10 +9,10 @@ public class FixTheRandom {
 	// Change ONE line of code to fix this program.
 	
 	public static void main(String[] args) {
-		
+	for(int x =0;x < 100;x += 1){	
 		Random random = new Random();
 		
-		int numnber = random.nextInt(5);
+		int numnber = random.nextInt(5)+5;
 		
 		if (numnber == 5) {
 			System.out.println("FIVE");
@@ -29,5 +29,5 @@ public class FixTheRandom {
 		}
 	}
 	
-	
+	}
 }
